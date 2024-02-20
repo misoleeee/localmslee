@@ -12,9 +12,9 @@ import lombok.*;
 public class CallCanceled extends AbstractEvent {
 
     private Long id;
-    private String customer;
     private String status;
     private Date callDt;
+    private String customerId;
 
     public CallCanceled(Call aggregate) {
         super(aggregate);

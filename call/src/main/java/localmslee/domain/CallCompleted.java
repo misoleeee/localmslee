@@ -12,9 +12,9 @@ import lombok.*;
 public class CallCompleted extends AbstractEvent {
 
     private Long id;
-    private String customer;
     private String status;
     private Date callDt;
+    private String customerId;
 
     public CallCompleted(Call aggregate) {
         super(aggregate);

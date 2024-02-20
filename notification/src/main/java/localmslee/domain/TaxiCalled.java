@@ -10,7 +10,7 @@ import lombok.*;
 public class TaxiCalled extends AbstractEvent {
 
     private Long id;
-    private String customer;
     private String status;
     private Date callDt;
+    private String customerId;
 }

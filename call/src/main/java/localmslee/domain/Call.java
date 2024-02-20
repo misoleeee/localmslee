@@ -34,9 +34,6 @@ public class Call {
 
     @PostUpdate
     public void onPostUpdate() {
-        CallCanceled callCanceled = new CallCanceled(this);
-        callCanceled.publishAfterCommit();
-
         CallCompleted callCompleted = new CallCompleted(this);
         callCompleted.publishAfterCommit();
     }
@@ -45,7 +42,10 @@ public class Call {
     public void onPreUpdate() {}
 
     @PreRemove
-    public void onPreRemove() {}
+    public void onPreRemove() {
+        CallCanceled callCanceled = new CallCanceled(this);
+        callCanceled.publishAfterCommit();
+    }
 
     public static CallRepository repository() {
         CallRepository callRepository = CallApplication.applicationContext.getBean(
