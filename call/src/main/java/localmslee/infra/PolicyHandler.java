@@ -110,5 +110,20 @@ public class PolicyHandler {
         // Sample Logic //
 
     }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='TaxiCanceled'"
+    )
+    public void wheneverTaxiCanceled_TaxiSaga(
+        @Payload TaxiCanceled taxiCanceled
+    ) {
+        TaxiCanceled event = taxiCanceled;
+        System.out.println(
+            "\n\n##### listener TaxiSaga : " + taxiCanceled + "\n\n"
+        );
+        // Sample Logic //
+
+    }
 }
 //>>> Clean Arch / Inbound Adaptor
