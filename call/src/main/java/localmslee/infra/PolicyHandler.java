@@ -53,6 +53,21 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='AdvancePayment'"
+    )
+    public void wheneverAdvancePayment_TaxiSaga(
+        @Payload AdvancePayment advancePayment
+    ) {
+        AdvancePayment event = advancePayment;
+        System.out.println(
+            "\n\n##### listener TaxiSaga : " + advancePayment + "\n\n"
+        );
+        // Sample Logic //
+
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
         condition = "headers['type']=='TaxiDepartured'"
     )
     public void wheneverTaxiDepartured_TaxiSaga(
@@ -68,14 +83,14 @@ public class PolicyHandler {
 
     @StreamListener(
         value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='AdvancePayment'"
+        condition = "headers['type']=='FinalPayment'"
     )
-    public void wheneverAdvancePayment_TaxiSaga(
-        @Payload AdvancePayment advancePayment
+    public void wheneverFinalPayment_TaxiSaga(
+        @Payload FinalPayment finalPayment
     ) {
-        AdvancePayment event = advancePayment;
+        FinalPayment event = finalPayment;
         System.out.println(
-            "\n\n##### listener TaxiSaga : " + advancePayment + "\n\n"
+            "\n\n##### listener TaxiSaga : " + finalPayment + "\n\n"
         );
         // Sample Logic //
 

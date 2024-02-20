@@ -32,6 +32,7 @@ jobs:
           mvn clean package -f ./call/pom.xml
           mvn clean package -f ./driver/pom.xml
           mvn clean package -f ./Payment/pom.xml
+          mvn clean package -f ./notification/pom.xml
 
       - name: Docker Build and push for Call
         uses: docker/build-push-action@v4
@@ -62,4 +63,14 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}/payment:latest
             ghcr.io/${{ github.repository }}/payment:${{ github.ref_name }}
+            
+      - name: Docker Build and push for Notification
+        uses: docker/build-push-action@v4
+        with:
+          context: ./notification
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/notification:latest
+            ghcr.io/${{ github.repository }}/notification:${{ github.ref_name }}
             

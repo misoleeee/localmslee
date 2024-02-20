@@ -31,7 +31,7 @@
                         </v-fab-transition>
                     </template>
 
-                    <DriverDriver :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
+                    <NotificationLog :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
                 
                     <v-btn
                             style="postition:absolute; top:2%; right:2%"
@@ -50,12 +50,12 @@
 
 <script>
     const axios = require('axios').default;
-    import DriverDriver from './../DriverDriver.vue';
+    import NotificationLog from './../NotificationLog.vue';
 
     export default {
-        name: 'DriverDriverManager',
+        name: 'NotificationLogManager',
         components: {
-            DriverDriver,
+            NotificationLog,
         },
         props: {
             offline: Boolean,
@@ -67,13 +67,9 @@
             headers: 
                 [
                     { text: "id", value: "id" },
-                    { text: "driverId", value: "driverId" },
-                    { text: "driverLocation", value: "driverLocation" },
-                    { text: "paymentStatus", value: "paymentStatus" },
-                    { text: "callStatus", value: "callStatus" },
-                    { text: "callDt", value: "callDt" },
+                    { text: "customerId", value: "customerId" },
                 ],
-            driver : [],
+            log : [],
             newValue: {},
             tick : true,
             openDialog : false,
@@ -84,16 +80,12 @@
                 return;
             }
 
-            var temp = await axios.get(axios.fixUrl('/drivers'))
-            temp.data._embedded.drivers.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
-            this.values = temp.data._embedded.drivers;
+            var temp = await axios.get(axios.fixUrl('/logs'))
+            temp.data._embedded.logs.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
+            this.values = temp.data._embedded.logs;
 
             this.newValue = {
-                'driverId': '',
-                'driverLocation': '',
-                'paymentStatus': '',
-                'callStatus': '',
-                'callDt': '2024-02-20',
+                'customerId': '',
             }
         },
         methods: {

@@ -1,6 +1,6 @@
 <template>
     <div>
-    <h1>Driver</h1>
+    <h1>Log</h1>
         <v-row>
             <v-card
                 class="mx-auto"
@@ -26,7 +26,7 @@
                         color="primary"
                         style="font-weight:500; font-size:20px; padding:15px; border:solid 2px; max-width:250px; overflow:hidden"
                     >
-                        Driver 등록
+                        Log 등록
                     </v-btn>
                 </v-card-actions>
             </v-card>
@@ -42,19 +42,11 @@
                         <v-list-item-title style="margin-bottom:10px;">
                             
                             
-                            
-                            
-                            
-                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
                             [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ DriverId :  {{data.driverId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ DriverLocation :  {{data.driverLocation }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ PaymentStatus :  {{data.paymentStatus }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ CallStatus :  {{data.callStatus }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ CallDt :  {{data.callDt }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ CustomerId :  {{data.customerId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -74,7 +66,7 @@
                         transition="dialog-bottom-transition"
                 >
 
-                    <DriverDriver :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
+                    <NotificationLog :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
                 
                     <v-btn
                             style="postition:absolute; top:2%; right:2%"
@@ -93,12 +85,12 @@
 
 <script>
     const axios = require('axios').default;
-    import DriverDriver from './../DriverDriver.vue';
+    import NotificationLog from './../NotificationLog.vue';
 
     export default {
-        name: 'DriverDriverManager',
+        name: 'NotificationLogManager',
         components: {
-            DriverDriver,
+            NotificationLog,
         },
         props: {
             offline: Boolean,
@@ -117,16 +109,12 @@
                 return;
             } 
 
-            var temp = await axios.get(axios.fixUrl('/drivers'))
-            temp.data._embedded.drivers.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
-            this.values = temp.data._embedded.drivers;
+            var temp = await axios.get(axios.fixUrl('/logs'))
+            temp.data._embedded.logs.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
+            this.values = temp.data._embedded.logs;
             
             this.newValue = {
-                'driverId': '',
-                'driverLocation': '',
-                'paymentStatus': '',
-                'callStatus': '',
-                'callDt': '2024-02-20',
+                'customerId': '',
             }
         },
         methods: {

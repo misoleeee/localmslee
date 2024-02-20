@@ -15,6 +15,7 @@ import PaymentPaymentManager from "./components/listers/PaymentPaymentCards"
 import PaymentPaymentDetail from "./components/listers/PaymentPaymentDetail"
 
 
+
 export default new Router({
     // mode: 'history',
     base: process.env.BASE_URL,
@@ -51,6 +52,7 @@ export default new Router({
                 name: 'PaymentPaymentDetail',
                 component: PaymentPaymentDetail
             },
+
 
 
 

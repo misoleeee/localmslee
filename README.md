@@ -23,6 +23,7 @@ See the README.md files inside the each microservices directory:
 - call
 - driver
 - Payment
+- notification
 
 
 ## Run API Gateway (Spring Gateway)
@@ -43,6 +44,9 @@ mvn spring-boot:run
 - Payment
 ```
  http :8088/payments id="id" customerId="customerId" driverId="driverId" paymentStatus="PaymentStatus" paymentDt="PaymentDt" charge="Charge" 
+```
+- notification
+```
 ```
 
 
