@@ -22,6 +22,7 @@
             <String label="CallStatus" v-model="value.callStatus" :editMode="editMode" :inputUI="''"/>
             <Date label="CallDt" v-model="value.callDt" :editMode="editMode" :inputUI="''"/>
             <Number label="DriverQty" v-model="value.driverQty" :editMode="editMode" :inputUI="''"/>
+            <String label="CustomerId" v-model="value.customerId" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions>

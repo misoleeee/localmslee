@@ -47,6 +47,7 @@
                             
                             
                             
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -57,6 +58,7 @@
                             [ CallStatus :  {{data.callStatus }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ CallDt :  {{data.callDt }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ DriverQty :  {{data.driverQty }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ CustomerId :  {{data.customerId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -130,6 +132,7 @@
                 'callStatus': '',
                 'callDt': '2024-02-20',
                 'driverQty': 0,
+                'customerId': '',
             }
         },
         methods: {

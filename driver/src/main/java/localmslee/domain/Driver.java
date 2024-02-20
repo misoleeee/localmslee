@@ -33,6 +33,8 @@ public class Driver {
 
     private Integer driverQty;
 
+    private String customerId;
+
     @PostPersist
     public void onPostPersist() {
         CallAccepted callAccepted = new CallAccepted(this);

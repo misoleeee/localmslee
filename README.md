@@ -39,7 +39,7 @@ mvn spring-boot:run
 ```
 - driver
 ```
- http :8088/drivers id="id" driverId="driverId" driverLocation="driverLocation" paymentStatus="PaymentStatus" callStatus="CallStatus" callDt="CallDt" driverQty="DriverQty" 
+ http :8088/drivers id="id" driverId="driverId" driverLocation="driverLocation" paymentStatus="PaymentStatus" callStatus="CallStatus" callDt="CallDt" driverQty="DriverQty" customerId="customerId" 
 ```
 - Payment
 ```
