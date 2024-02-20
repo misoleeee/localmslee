@@ -17,6 +17,7 @@ public class CallRejected extends AbstractEvent {
     private String paymentStatus;
     private String callStatus;
     private Date callDt;
+    private Integer driverQty;
 
     public CallRejected(Driver aggregate) {
         super(aggregate);

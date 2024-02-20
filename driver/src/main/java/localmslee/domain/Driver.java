@@ -40,19 +40,16 @@ public class Driver {
 
         TaxiDepartured taxiDepartured = new TaxiDepartured(this);
         taxiDepartured.publishAfterCommit();
+    }
+
+    @PreRemove
+    public void onPreRemove() {
+        CallRejected callRejected = new CallRejected(this);
+        callRejected.publishAfterCommit();
 
         CallCanceled callCanceled = new CallCanceled(this);
         callCanceled.publishAfterCommit();
     }
-
-    @PreUpdate
-    public void onPreUpdate() {
-        CallRejected callRejected = new CallRejected(this);
-        callRejected.publishAfterCommit();
-    }
-
-    @PreRemove
-    public void onPreRemove() {}
 
     public static DriverRepository repository() {
         DriverRepository driverRepository = DriverApplication.applicationContext.getBean(
