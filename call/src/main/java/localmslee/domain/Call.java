@@ -5,9 +5,9 @@ import java.util.Date;
 import java.util.List;
 import javax.persistence.*;
 import localmslee.CallApplication;
-import localmslee.domain.CallCanceled;
 import localmslee.domain.CallCompleted;
 import localmslee.domain.TaxiCalled;
+import localmslee.domain.TaxiCanceled;
 import lombok.Data;
 
 @Entity
@@ -45,8 +45,8 @@ public class Call {
 
     @PreRemove
     public void onPreRemove() {
-        CallCanceled callCanceled = new CallCanceled(this);
-        callCanceled.publishAfterCommit();
+        TaxiCanceled taxiCanceled = new TaxiCanceled(this);
+        taxiCanceled.publishAfterCommit();
     }
 
     public static CallRepository repository() {
