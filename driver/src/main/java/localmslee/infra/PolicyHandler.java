@@ -22,5 +22,26 @@ public class PolicyHandler {
 
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
+
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='TaxiCalled'"
+    )
+    public void TaxiCalled_CallAccepted(
+        @Payload Driver driver
+    ) {
+        Driver event = driver;
+        System.out.println("\n\n==================================================");
+        System.out.println("##### listener IncreaseStock : " + driver + " / EventInfo : " + event + "\n\n");
+
+        driverRepository.save(driver);
+        System.out.println("\n\n==================================================");
+        System.out.println("##### save Repository Information : " + driverRepository.findById(driver.getId()));
+
+        // driver.setPrdStatus("결제완료");
+        CallAccepted callAccepted = new CallAccepted(driver);
+        callAccepted.publishAfterCommit();
+    }
 }
 //>>> Clean Arch / Inbound Adaptor
