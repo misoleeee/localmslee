@@ -14,6 +14,9 @@
             <div>
                 <Date label="CallDt" v-model="item.callDt" :editMode="editMode" @change="change" />
             </div>
+            <div>
+                <Number label="Charge" v-model="item.charge" :editMode="editMode" @change="change" />
+            </div>
         </v-card-text>
 
         <v-card-actions>

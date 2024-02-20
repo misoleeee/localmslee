@@ -18,13 +18,7 @@
                                 DriverId :  {{item.driverId }}
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
-                                DriverLocation :  {{item.driverLocation }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                PaymentStatus :  {{item.paymentStatus }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                CallStatus :  {{item.callStatus }}
+                                Status :  {{item.status }}
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
                                 CallDt :  {{item.callDt }}
@@ -34,6 +28,12 @@
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
                                 CustomerId :  {{item.customerId }}
+                            </v-list-item-subtitle>
+                            <v-list-item-subtitle>
+                                Charge :  {{item.charge }}
+                            </v-list-item-subtitle>
+                            <v-list-item-subtitle>
+                                PaymentStatus :  {{item.paymentStatus }}
                             </v-list-item-subtitle>
                         </v-list-item-content>
 

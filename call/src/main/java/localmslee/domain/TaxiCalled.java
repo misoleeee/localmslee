@@ -15,6 +15,7 @@ public class TaxiCalled extends AbstractEvent {
     private String status;
     private Date callDt;
     private String customerId;
+    private Integer charge;
 
     public TaxiCalled(Call aggregate) {
         super(aggregate);

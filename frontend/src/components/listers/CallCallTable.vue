@@ -70,6 +70,7 @@
                     { text: "customerId", value: "customerId" },
                     { text: "status", value: "status" },
                     { text: "callDt", value: "callDt" },
+                    { text: "charge", value: "charge" },
                 ],
             call : [],
             newValue: {},
@@ -90,6 +91,7 @@
                 'customerId': '',
                 'status': '',
                 'callDt': '2024-02-20',
+                'charge': 0,
             }
         },
         methods: {

@@ -14,8 +14,10 @@ public class AdvancePayment extends AbstractEvent {
     private Long id;
     private String customerId;
     private String driverId;
+    private String status;
+    private Date callDt;
+    private Integer charge;
     private String paymentStatus;
-    private Date paymentDt;
 
     public AdvancePayment(Payment aggregate) {
         super(aggregate);

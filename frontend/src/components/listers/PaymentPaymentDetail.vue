@@ -12,13 +12,16 @@
                 <String label="DriverId" v-model="item.driverId" :editMode="editMode" @change="change" />
             </div>
             <div>
-                <String label="PaymentStatus" v-model="item.paymentStatus" :editMode="editMode" @change="change" />
+                <String label="Status" v-model="item.status" :editMode="editMode" @change="change" />
             </div>
             <div>
-                <Date label="PaymentDt" v-model="item.paymentDt" :editMode="editMode" @change="change" />
+                <Date label="CallDt" v-model="item.callDt" :editMode="editMode" @change="change" />
             </div>
             <div>
                 <Number label="Charge" v-model="item.charge" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <String label="PaymentStatus" v-model="item.paymentStatus" :editMode="editMode" @change="change" />
             </div>
         </v-card-text>
 

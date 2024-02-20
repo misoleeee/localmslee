@@ -12,9 +12,6 @@ public interface DriverService {
     @RequestMapping(method = RequestMethod.POST, path = "/drivers")
     public void taxiCall(@RequestBody Driver driver);
 
-    @RequestMapping(method = RequestMethod.DELETE, path = "/drivers")
-    public void rejectCall(@RequestBody Driver driver);
-
     @RequestMapping(method = RequestMethod.POST, path = "/drivers")
     public void taxiDeparture(@RequestBody Driver driver);
 

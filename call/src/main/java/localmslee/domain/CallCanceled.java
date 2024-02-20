@@ -15,6 +15,7 @@ public class CallCanceled extends AbstractEvent {
     private String status;
     private Date callDt;
     private String customerId;
+    private Integer charge;
 
     public CallCanceled(Call aggregate) {
         super(aggregate);

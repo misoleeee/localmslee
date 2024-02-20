@@ -9,7 +9,8 @@ public class Payment {
     private Long id;
     private String customerId;
     private String driverId;
-    private String paymentStatus;
-    private Date paymentDt;
+    private String status;
+    private Date callDt;
     private Integer charge;
+    private String paymentStatus;
 }

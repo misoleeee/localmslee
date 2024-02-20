@@ -35,15 +35,15 @@ mvn spring-boot:run
 ## Test by API
 - call
 ```
- http :8088/calls id="id" customerId="customerId" status="Status" callDt="CallDt" 
+ http :8088/calls id="id" customerId="customerId" status="Status" callDt="CallDt" charge="Charge" 
 ```
 - driver
 ```
- http :8088/drivers id="id" driverId="driverId" driverLocation="driverLocation" paymentStatus="PaymentStatus" callStatus="CallStatus" callDt="CallDt" driverQty="DriverQty" customerId="customerId" 
+ http :8088/drivers id="id" driverId="driverId" status="Status" callDt="CallDt" driverQty="DriverQty" customerId="customerId" charge="Charge" paymentStatus="PaymentStatus" 
 ```
 - Payment
 ```
- http :8088/payments id="id" customerId="customerId" driverId="driverId" paymentStatus="PaymentStatus" paymentDt="PaymentDt" charge="Charge" 
+ http :8088/payments id="id" customerId="customerId" driverId="driverId" status="Status" callDt="CallDt" charge="Charge" paymentStatus="PaymentStatus" 
 ```
 - notification
 ```

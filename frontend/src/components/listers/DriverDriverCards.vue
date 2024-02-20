@@ -110,12 +110,12 @@
             
             me.newValue = {
                 'driverId': '',
-                'driverLocation': '',
-                'paymentStatus': '',
-                'callStatus': '',
+                'status': '',
                 'callDt': '2024-02-20',
                 'driverQty': 0,
                 'customerId': '',
+                'charge': 0,
+                'paymentStatus': '',
             }
         },
         methods:{

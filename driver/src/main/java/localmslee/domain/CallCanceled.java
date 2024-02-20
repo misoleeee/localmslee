@@ -13,12 +13,12 @@ public class CallCanceled extends AbstractEvent {
 
     private Long id;
     private String driverId;
-    private String driverLocation;
-    private String paymentStatus;
-    private String callStatus;
+    private String status;
     private Date callDt;
     private Integer driverQty;
     private String customerId;
+    private Integer charge;
+    private String paymentStatus;
 
     public CallCanceled(Driver aggregate) {
         super(aggregate);

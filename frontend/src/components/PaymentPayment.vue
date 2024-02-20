@@ -18,9 +18,10 @@
         <v-card-text>
             <String label="CustomerId" v-model="value.customerId" :editMode="editMode" :inputUI="''"/>
             <String label="DriverId" v-model="value.driverId" :editMode="editMode" :inputUI="''"/>
-            <String label="PaymentStatus" v-model="value.paymentStatus" :editMode="editMode" :inputUI="''"/>
-            <Date label="PaymentDt" v-model="value.paymentDt" :editMode="editMode" :inputUI="''"/>
+            <String label="Status" v-model="value.status" :editMode="editMode" :inputUI="''"/>
+            <Date label="CallDt" v-model="value.callDt" :editMode="editMode" :inputUI="''"/>
             <Number label="Charge" v-model="value.charge" :editMode="editMode" :inputUI="''"/>
+            <String label="PaymentStatus" v-model="value.paymentStatus" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions>
