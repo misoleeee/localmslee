@@ -68,12 +68,12 @@
                 [
                     { text: "id", value: "id" },
                     { text: "driverId", value: "driverId" },
-                    { text: "driverLocation", value: "driverLocation" },
-                    { text: "paymentStatus", value: "paymentStatus" },
-                    { text: "callStatus", value: "callStatus" },
+                    { text: "status", value: "status" },
                     { text: "callDt", value: "callDt" },
                     { text: "driverQty", value: "driverQty" },
                     { text: "customerId", value: "customerId" },
+                    { text: "charge", value: "charge" },
+                    { text: "paymentStatus", value: "paymentStatus" },
                 ],
             driver : [],
             newValue: {},
@@ -92,12 +92,12 @@
 
             this.newValue = {
                 'driverId': '',
-                'driverLocation': '',
-                'paymentStatus': '',
-                'callStatus': '',
+                'status': '',
                 'callDt': '2024-02-20',
                 'driverQty': 0,
                 'customerId': '',
+                'charge': 0,
+                'paymentStatus': '',
             }
         },
         methods: {

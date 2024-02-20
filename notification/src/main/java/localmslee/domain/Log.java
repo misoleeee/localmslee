@@ -144,30 +144,6 @@ public class Log {
         */
 
     }
-
-    //>>> Clean Arch / Port Method
-    //<<< Clean Arch / Port Method
-    public static void alertToUser(CallRejected callRejected) {
-        //implement business logic here:
-
-        /** Example 1:  new item 
-        Log log = new Log();
-        repository().save(log);
-
-        */
-
-        /** Example 2:  finding and process
-        
-        repository().findById(callRejected.get???()).ifPresent(log->{
-            
-            log // do something
-            repository().save(log);
-
-
-         });
-        */
-
-    }
     //>>> Clean Arch / Port Method
 
 }

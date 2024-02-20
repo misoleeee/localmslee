@@ -111,9 +111,10 @@
             me.newValue = {
                 'customerId': '',
                 'driverId': '',
-                'paymentStatus': '',
-                'paymentDt': '2024-02-20',
+                'status': '',
+                'callDt': '2024-02-20',
                 'charge': 0,
+                'paymentStatus': '',
             }
         },
         methods:{

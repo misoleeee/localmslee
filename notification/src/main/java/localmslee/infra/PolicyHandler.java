@@ -97,21 +97,5 @@ public class PolicyHandler {
         // Sample Logic //
         Log.alertToUser(event);
     }
-
-    @StreamListener(
-        value = KafkaProcessor.INPUT,
-        condition = "headers['type']=='CallRejected'"
-    )
-    public void wheneverCallRejected_AlertToUser(
-        @Payload CallRejected callRejected
-    ) {
-        CallRejected event = callRejected;
-        System.out.println(
-            "\n\n##### listener AlertToUser : " + callRejected + "\n\n"
-        );
-
-        // Sample Logic //
-        Log.alertToUser(event);
-    }
 }
 //>>> Clean Arch / Inbound Adaptor

@@ -17,12 +17,12 @@
 
         <v-card-text>
             <String label="DriverId" v-model="value.driverId" :editMode="editMode" :inputUI="''"/>
-            <String label="DriverLocation" v-model="value.driverLocation" :editMode="editMode" :inputUI="''"/>
-            <String label="PaymentStatus" v-model="value.paymentStatus" :editMode="editMode" :inputUI="''"/>
-            <String label="CallStatus" v-model="value.callStatus" :editMode="editMode" :inputUI="''"/>
+            <String label="Status" v-model="value.status" :editMode="editMode" :inputUI="''"/>
             <Date label="CallDt" v-model="value.callDt" :editMode="editMode" :inputUI="''"/>
             <Number label="DriverQty" v-model="value.driverQty" :editMode="editMode" :inputUI="''"/>
             <String label="CustomerId" v-model="value.customerId" :editMode="editMode" :inputUI="''"/>
+            <Number label="Charge" v-model="value.charge" :editMode="editMode" :inputUI="''"/>
+            <String label="PaymentStatus" v-model="value.paymentStatus" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions>
@@ -42,13 +42,6 @@
                     @click="save"
                 >
                     TaxiCall
-                </v-btn>
-                <v-btn
-                    color="primary"
-                    text
-                    @click="save"
-                >
-                    RejectCall
                 </v-btn>
                 <v-btn
                     color="primary"

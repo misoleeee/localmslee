@@ -15,6 +15,7 @@ public class CallCompleted extends AbstractEvent {
     private String status;
     private Date callDt;
     private String customerId;
+    private Integer charge;
 
     public CallCompleted(Call aggregate) {
         super(aggregate);

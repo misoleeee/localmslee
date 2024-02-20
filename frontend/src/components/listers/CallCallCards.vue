@@ -112,6 +112,7 @@
                 'customerId': '',
                 'status': '',
                 'callDt': '2024-02-20',
+                'charge': 0,
             }
         },
         methods:{

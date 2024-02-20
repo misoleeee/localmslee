@@ -7,7 +7,6 @@ import javax.persistence.*;
 import localmslee.DriverApplication;
 import localmslee.domain.CallAccepted;
 import localmslee.domain.CallCanceled;
-import localmslee.domain.CallRejected;
 import localmslee.domain.TaxiDepartured;
 import lombok.Data;
 
@@ -23,17 +22,17 @@ public class Driver {
 
     private String driverId;
 
-    private String driverLocation;
-
-    private String paymentStatus;
-
-    private String callStatus;
+    private String status;
 
     private Date callDt;
 
     private Integer driverQty;
 
     private String customerId;
+
+    private Integer charge;
+
+    private String paymentStatus;
 
     @PostPersist
     public void onPostPersist() {
@@ -46,9 +45,6 @@ public class Driver {
 
     @PreRemove
     public void onPreRemove() {
-        CallRejected callRejected = new CallRejected(this);
-        callRejected.publishAfterCommit();
-
         CallCanceled callCanceled = new CallCanceled(this);
         callCanceled.publishAfterCommit();
     }

@@ -9,13 +9,7 @@
                 <String label="DriverId" v-model="item.driverId" :editMode="editMode" @change="change" />
             </div>
             <div>
-                <String label="DriverLocation" v-model="item.driverLocation" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <String label="PaymentStatus" v-model="item.paymentStatus" :editMode="editMode" @change="change" />
-            </div>
-            <div>
-                <String label="CallStatus" v-model="item.callStatus" :editMode="editMode" @change="change" />
+                <String label="Status" v-model="item.status" :editMode="editMode" @change="change" />
             </div>
             <div>
                 <Date label="CallDt" v-model="item.callDt" :editMode="editMode" @change="change" />
@@ -25,6 +19,12 @@
             </div>
             <div>
                 <String label="CustomerId" v-model="item.customerId" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <Number label="Charge" v-model="item.charge" :editMode="editMode" @change="change" />
+            </div>
+            <div>
+                <String label="PaymentStatus" v-model="item.paymentStatus" :editMode="editMode" @change="change" />
             </div>
         </v-card-text>
 

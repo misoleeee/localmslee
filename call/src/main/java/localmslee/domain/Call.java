@@ -26,6 +26,8 @@ public class Call {
 
     private Date callDt;
 
+    private Integer charge;
+
     @PostPersist
     public void onPostPersist() {
         TaxiCalled taxiCalled = new TaxiCalled(this);

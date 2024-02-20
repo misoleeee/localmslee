@@ -23,23 +23,25 @@ public class Payment {
 
     private String driverId;
 
-    private String paymentStatus;
+    private String status;
 
-    private Date paymentDt;
+    private Date callDt;
 
     private Integer charge;
+
+    private String paymentStatus;
 
     @PostPersist
     public void onPostPersist() {
         AdvancePayment advancePayment = new AdvancePayment(this);
         advancePayment.publishAfterCommit();
-
-        FinalPayment finalPayment = new FinalPayment(this);
-        finalPayment.publishAfterCommit();
     }
 
     @PreUpdate
-    public void onPreUpdate() {}
+    public void onPreUpdate() {
+        FinalPayment finalPayment = new FinalPayment(this);
+        finalPayment.publishAfterCommit();
+    }
 
     public static PaymentRepository repository() {
         PaymentRepository paymentRepository = PaymentApplication.applicationContext.getBean(

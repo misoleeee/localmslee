@@ -69,9 +69,10 @@
                     { text: "id", value: "id" },
                     { text: "customerId", value: "customerId" },
                     { text: "driverId", value: "driverId" },
-                    { text: "paymentStatus", value: "paymentStatus" },
-                    { text: "paymentDt", value: "paymentDt" },
+                    { text: "status", value: "status" },
+                    { text: "callDt", value: "callDt" },
                     { text: "charge", value: "charge" },
+                    { text: "paymentStatus", value: "paymentStatus" },
                 ],
             payment : [],
             newValue: {},
@@ -91,9 +92,10 @@
             this.newValue = {
                 'customerId': '',
                 'driverId': '',
-                'paymentStatus': '',
-                'paymentDt': '2024-02-20',
+                'status': '',
+                'callDt': '2024-02-20',
                 'charge': 0,
+                'paymentStatus': '',
             }
         },
         methods: {
