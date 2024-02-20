@@ -9,18 +9,19 @@ import lombok.*;
 //<<< DDD / Domain Event
 @Data
 @ToString
-public class CallCanceled extends AbstractEvent {
+public class TaxiCanceled extends AbstractEvent {
 
     private Long id;
     private String status;
     private Date callDt;
     private String customerId;
+    private Integer charge;
 
-    public CallCanceled(Call aggregate) {
+    public TaxiCanceled(Call aggregate) {
         super(aggregate);
     }
 
-    public CallCanceled() {
+    public TaxiCanceled() {
         super();
     }
 }
