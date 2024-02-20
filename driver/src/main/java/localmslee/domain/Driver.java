@@ -31,6 +31,8 @@ public class Driver {
 
     private Date callDt;
 
+    private Integer driverQty;
+
     @PostPersist
     public void onPostPersist() {
         CallAccepted callAccepted = new CallAccepted(this);
@@ -48,6 +50,9 @@ public class Driver {
         CallRejected callRejected = new CallRejected(this);
         callRejected.publishAfterCommit();
     }
+
+    @PreRemove
+    public void onPreRemove() {}
 
     public static DriverRepository repository() {
         DriverRepository driverRepository = DriverApplication.applicationContext.getBean(

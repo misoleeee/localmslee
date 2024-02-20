@@ -114,6 +114,7 @@
                 'paymentStatus': '',
                 'callStatus': '',
                 'callDt': '2024-02-20',
+                'driverQty': 0,
             }
         },
         methods:{

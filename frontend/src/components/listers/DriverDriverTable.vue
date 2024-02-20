@@ -72,6 +72,7 @@
                     { text: "paymentStatus", value: "paymentStatus" },
                     { text: "callStatus", value: "callStatus" },
                     { text: "callDt", value: "callDt" },
+                    { text: "driverQty", value: "driverQty" },
                 ],
             driver : [],
             newValue: {},
@@ -94,6 +95,7 @@
                 'paymentStatus': '',
                 'callStatus': '',
                 'callDt': '2024-02-20',
+                'driverQty': 0,
             }
         },
         methods: {

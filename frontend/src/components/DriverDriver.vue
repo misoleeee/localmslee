@@ -21,6 +21,7 @@
             <String label="PaymentStatus" v-model="value.paymentStatus" :editMode="editMode" :inputUI="''"/>
             <String label="CallStatus" v-model="value.callStatus" :editMode="editMode" :inputUI="''"/>
             <Date label="CallDt" v-model="value.callDt" :editMode="editMode" :inputUI="''"/>
+            <Number label="DriverQty" v-model="value.driverQty" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions>

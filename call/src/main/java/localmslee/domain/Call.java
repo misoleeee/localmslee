@@ -44,6 +44,9 @@ public class Call {
     @PreUpdate
     public void onPreUpdate() {}
 
+    @PreRemove
+    public void onPreRemove() {}
+
     public static CallRepository repository() {
         CallRepository callRepository = CallApplication.applicationContext.getBean(
             CallRepository.class
