@@ -16,4 +16,5 @@ public class TaxiDepartured extends AbstractEvent {
     private String callStatus;
     private Date callDt;
     private Integer driverQty;
+    private String customerId;
 }

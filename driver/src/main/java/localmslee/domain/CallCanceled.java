@@ -18,6 +18,7 @@ public class CallCanceled extends AbstractEvent {
     private String callStatus;
     private Date callDt;
     private Integer driverQty;
+    private String customerId;
 
     public CallCanceled(Driver aggregate) {
         super(aggregate);

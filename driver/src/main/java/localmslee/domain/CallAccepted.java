@@ -18,6 +18,7 @@ public class CallAccepted extends AbstractEvent {
     private String callStatus;
     private Date callDt;
     private Integer driverQty;
+    private String customerId;
 
     public CallAccepted(Driver aggregate) {
         super(aggregate);
